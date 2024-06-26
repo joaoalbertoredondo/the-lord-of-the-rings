@@ -15,6 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         ring: ["var(--font-ring)"],
+        middle: ["var(--font-middle)"],
       },
     },
   },

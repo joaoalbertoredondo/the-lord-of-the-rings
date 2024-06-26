@@ -9,10 +9,19 @@ const inter = Inter({ subsets: ["latin"] });
 const ring = localFont({
   src: [
     {
-      path: "../public/font/RINGM___.ttf",
+      path: "../public/fonts/RINGM___.ttf",
     },
   ],
   variable: "--font-ring",
+});
+
+const middle = localFont({
+  src: [
+    {
+      path: "../public/fonts/MiddleEarth.otf",
+    },
+  ],
+  variable: "--font-middle",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${ring.variable}`}>
+    <html lang="en" className={`${ring.variable} ${middle.variable}`}>
       <body
         className={`${inter.className} h-screen bg-gradient-to-b from-[#161616] to-[#3C4B4C]`}
       >
