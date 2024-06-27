@@ -16,7 +16,7 @@ function BurgerMenu() {
         />
       </span>
       {menuOpen && (
-        <div className="p-5 w-[100%] h-[100%] fixed top-0 left-0 bg-[#1a1b1b] ease-in-out transition-all duration-300">
+        <div className="p-5 w-[100%] h-[100%] fixed top-0 left-0 bg-[#1a1b1b] ease-in-out transition-all duration-300 z-50">
           <XCircleIcon
             onClick={() => setMenuOpen(false)}
             className="h-6 w-6 text-slate-00 hover:text-gray-600 duration-300 cursor-pointer"

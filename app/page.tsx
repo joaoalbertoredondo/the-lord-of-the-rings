@@ -5,7 +5,6 @@ import CardSection from "./components/CardSection";
 function page() {
   return (
     <div>
-      <Head />
       <Hero />
       <CardSection />
     </div>
