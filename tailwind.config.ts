@@ -19,6 +19,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwind-scrollbar"),
+    require("tailwind-extended-shadows"),
+  ],
 };
 export default config;

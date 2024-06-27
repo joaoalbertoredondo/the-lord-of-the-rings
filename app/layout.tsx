@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,12 +36,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${ring.variable} ${middle.variable}`}>
-      <body
-        className={`${inter.className} h-screen bg-gradient-to-b from-[#161616] to-[#3C4B4C]`}
-      >
-        <Header />
+    <html
+      lang="en"
+      className={`${ring.variable} ${middle.variable} h-full bg-gradient-to-b from-[#161616] to-[#3C4B4C] scrollbar-none bg-fixed overflow-y-scroll scroll-smooth`}
+    >
+      <body className={`${inter.className}`}>
+        <section id="home">
+          <Header />
+        </section>
         {children}
+        <Footer />
       </body>
     </html>
   );

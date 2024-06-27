@@ -40,6 +40,15 @@ function BurgerMenu() {
                 characters
               </Link>
             </li>
+            <li className="mx-2 my-3 md:my-0">
+              <Link
+                onClick={() => setMenuOpen(false)}
+                href={"/races"}
+                className="text-xl hover:text-gray-600 duration-300 font-ring"
+              >
+                races
+              </Link>
+            </li>
           </ul>
         </div>
       )}

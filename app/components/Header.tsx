@@ -1,5 +1,4 @@
 import { client, urlFor } from "@/lib/sanity";
-import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
 import Link from "next/link";
 import BurgerMenu from "./BurgerMenu";
@@ -7,14 +6,13 @@ import Search from "./Search";
 
 async function getData() {
   const query = "*[_type == 'logos'][0]";
-
   const data = await client.fetch(query);
-
   return data;
 }
 
 async function Header() {
   const data = await getData();
+
   return (
     <header>
       <div>
@@ -32,10 +30,18 @@ async function Header() {
             </li>
             <li className="mx-2 my-3 md:my-0">
               <Link
-                href={"#"}
+                href={"/characters"}
                 className="text-xl hover:text-gray-600 duration-300 font-ring"
               >
                 characters
+              </Link>
+            </li>
+            <li className="mx-2 my-3 md:my-0">
+              <Link
+                href={"/races"}
+                className="text-xl hover:text-gray-600 duration-300 font-ring"
+              >
+                races
               </Link>
             </li>
           </ul>
@@ -47,23 +53,25 @@ async function Header() {
                 width={200}
                 src={urlFor(data.logoSm).url()}
                 alt="LogoSm"
-                className="md:hidden lg:hidden"
+                className="lg:hidden"
               />
               <Image
                 height={400}
                 width={400}
                 src={urlFor(data.logoLg).url()}
                 alt="LogoLg"
-                className="hidden md:block lg:block"
+                className="hidden lg:block"
               />
             </Link>
           </div>
-          <Search />
-          <input
-            type="text"
-            placeholder=" Search"
-            className="h-6 hidden md:block rounded-md bg-gray-800 focus:bg-slate-300 focus:text-gray-800 outline-none transition-all ease-in duration-300"
-          />
+          <div>
+            <Search />
+            <input
+              type="text"
+              placeholder="Search"
+              className="w-[265px] h-6 pl-2 hidden md:block rounded-md bg-gray-800 focus:bg-slate-300 focus:text-gray-800 outline-none transition-all ease-in duration-300 placeholder:text-gray-500"
+            />
+          </div>
         </nav>
       </div>
     </header>
