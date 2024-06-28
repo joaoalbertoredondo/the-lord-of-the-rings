@@ -69,7 +69,7 @@ async function Header() {
             <input
               type="text"
               placeholder="Search"
-              className="w-[265px] h-6 pl-2 hidden md:block rounded-md bg-gray-800 focus:bg-slate-300 focus:text-gray-800 outline-none transition-all ease-in duration-300 placeholder:text-gray-500"
+              className="pl-2 h-6 w-full rounded-md bg-gray-800 focus:bg-slate-300 focus:text-gray-800 outline-none transition-all ease-in duration-300 hidden md:block"
             />
           </div>
         </nav>

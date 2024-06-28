@@ -2,7 +2,7 @@ import CharsList from "../components/CharsList";
 
 function page() {
   return (
-    <div>
+    <div className="mb-10">
       <CharsList random={true} />
     </div>
   );

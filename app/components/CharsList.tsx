@@ -1,9 +1,12 @@
 import { client } from "@/lib/sanity";
 import Image from "next/image";
-import { simplifiedCharacter } from "../interface";
+import { SimplifiedCharacter } from "../interface";
 import Link from "next/link";
 
-async function getData(random: boolean, numberOfChars?: number) {
+async function getData(
+  random: boolean,
+  numberOfChars?: number
+): Promise<SimplifiedCharacter[]> {
   const query = `*[_type == 'characters']${!!numberOfChars ? "[0..." + numberOfChars + "]" : ""} | order(lower(title) asc) {
     _id,
     race,
@@ -24,7 +27,7 @@ interface Props {
 }
 
 async function CharsList({ numOfChars, random }: Props) {
-  const data: simplifiedCharacter[] = await getData(random, numOfChars);
+  const data: SimplifiedCharacter[] = await getData(random, numOfChars);
   return (
     <div className="flex mt-10 justify-center">
       <div className="md:grid md:grid-cols-3 md:gap-4 lg:grid lg:grid-cols-4 lg:gap-6 px-3">

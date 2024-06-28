@@ -1,14 +1,17 @@
 "use client";
 
 import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { redirect } from "next/navigation";
 
 function Search() {
+  const router = useRouter();
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
   const submitFn = (e: any) => {
+    console.log("click");
     e.preventDefault();
-    // window.location.replace = "/SearchResults";
+    router.push(`/search-results/${searchValue}`);
   };
 
   return (
@@ -23,8 +26,9 @@ function Search() {
       {searchOpen && (
         <input
           type="text"
-          placeholder=" Search"
-          className="h-6 w-full rounded-md bg-gray-800 focus:bg-slate-300 focus:text-gray-800 outline-none transition-all ease-in duration-300"
+          placeholder="Search"
+          onChange={(e) => setSearchValue(e.target.value)}
+          className="pl-2 h-6 w-full rounded-md bg-gray-800 focus:bg-slate-300 focus:text-gray-800 outline-none transition-all ease-in duration-300"
         />
       )}
     </form>
