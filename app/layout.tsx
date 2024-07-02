@@ -42,7 +42,7 @@ export default function RootLayout({
       className={`${ring.variable} ${middle.variable} h-full bg-gradient-to-b from-[#161616] to-[#3C4B4C] scrollbar-none bg-fixed overflow-y-scroll scroll-smooth`}
     >
       <body className={`${inter.className}`}>
-        <section id="home">
+        <section id="header">
           <Head />
           <Header />
         </section>

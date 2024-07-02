@@ -16,3 +16,10 @@ export interface CharacterFullProfile {
   weapons: string;
   imageUrl: string;
 }
+
+export interface RacesPage {
+  _id: string;
+  name: string;
+  slug: string;
+  imageUrl: string;
+}

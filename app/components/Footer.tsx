@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div className="md:mt-20">
       <div className="flex justify-center">
-        <Link href={"#home"}>
+        <Link href={"#header"}>
           <button className="w-screen text-gray-300 hover:text-gray-500 hover:bg-[#161616] bg-[#191919] p-2 shadow-lg shadow-y-[-8px] shadow-black/30 font-middle">
             back to top
           </button>

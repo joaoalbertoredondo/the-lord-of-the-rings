@@ -34,7 +34,7 @@ async function CharsList({ numOfChars, random }: Props) {
         {data.map((characters) => (
           <div
             key={characters._id}
-            className="mt-3 md:mt-0 flex md:flex-col rounded-lg overflow-hidden md:max-w-[295px] bg-slate-300 md:opacity-70 md:hover:opacity-100 md:hover:translate-y-[-3px] transition shadow-md shadow-black/30"
+            className="mt-3 md:mt-0 flex md:flex-col rounded-lg overflow-hidden md:max-w-[295px] bg-slate-300/30 md:opacity-70 md:hover:opacity-100 md:hover:translate-y-[-3px] transition shadow-md shadow-black/30"
           >
             <Link href={`/characters/${characters.slug}`}>
               <div className="h-44 w-44 md:w-[295px] md:h-[250px] flex-shrink-0 overflow-hidden">
